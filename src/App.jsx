@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import { ToastContainer } from 'react-toastify'
-import Booking from './components/BookMovie'
-import Login from './components/Login'
-import Selection from './components/SelectMovie';
-import Activity from './components/Activity';
+import Booking from './pages/Booking'
+import Login from './pages/Login'
+import Selection from './pages/Selection';
+import Activity from './pages/Activity';
 
 function App() {
 

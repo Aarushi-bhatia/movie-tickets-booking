@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSearch, FaUserCircle, FaGlobe } from "react-icons/fa";
+import Nav from "../components/Nav";
+import UserName from "../components/UserName";
 
 const movies = [
   { id: 1, name: "Godfather", year: 1975, image: "godfather.jpg" },
@@ -30,26 +32,7 @@ const Booking = () => {
 
   return (
     <div className="h-screen flex">
-      <div className="w-64 m-5 rounded-md bg-black text-white p-5 flex flex-col">
-        <div className="flex items-center gap-3 mx-auto mt-6">
-          <img src="icon.png" className="w-10" />
-          <h1 className="text-3xl font-bold ">NeoBuild</h1>
-        </div>
-        <nav className="mt-12 space-y-4">
-          <button className="flex items-center space-x-2 py-3 px-2 bg-white text-black rounded-md w-full font-bold">
-            <div className="flex items-center gap-3 mx-auto">
-              <img src="booking.png" alt="" className="w-5" />
-              Booking
-            </div>
-          </button>
-          <button className="flex items-center space-x-2 py-3 px-2 hover:bg-gray-800 rounded-md w-full font-bold">
-            <div className="flex items-center gap-3 mx-auto">
-              <img src="activity.png" alt="" className="w-5" />
-              Activity
-            </div>
-          </button>
-        </nav>
-      </div>
+      <Nav />
       <div className="flex-1 pb-8 pl-8 pt-3">
         <div className="flex justify-between items-center mb-6">
           <div className="relative w-3xl">
@@ -58,17 +41,11 @@ const Booking = () => {
               placeholder="Search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full py-3 pl-5 border border-gray-300 bg-gray-300 rounded-md placeholder-black font-bold"
+              className="w-full mt-3 py-3 pl-5 border border-gray-300 bg-gray-300 rounded-md placeholder-black font-bold"
             />
-            <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 h-8" />
+            <FaSearch className="absolute right-3 top-9 transform -translate-y-1/2 text-gray-600 h-8" />
           </div>
-          <div className="flex items-center gap-3 pr-7">
-            <img
-              src="account.png"
-              className="w-14 bg-gray-300 rounded-full p-3"
-            />
-            <p className="font-semibold text-xl">Naval Ravikant</p>
-          </div>
+          <UserName />
         </div>
         <h2 className="text-2xl font-bold mb-4">
           Good Morning Mr. Naval Ravikant!
