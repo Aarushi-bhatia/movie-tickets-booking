@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Nav from "../components/Nav";
-import {
-  FaCalendar,
-  FaGlobe,
-  FaMinus,
-  FaMoon,
-  FaPlus,
-  FaSun,
-} from "react-icons/fa";
+import { FaGlobe, FaMinus, FaMoon, FaPlus, FaSun } from "react-icons/fa";
 import UserName from "../components/UserName";
 
 const Selection = () => {
@@ -19,6 +12,7 @@ const Selection = () => {
   const [time, setTime] = useState("12:00");
   const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleBookingTicket = () => {
     if (!movie) {
@@ -34,12 +28,15 @@ const Selection = () => {
       amount: ticketCount * 25,
     };
 
+    setLoading(true);
+
     const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
     bookings.push(booking);
     localStorage.setItem("bookings", JSON.stringify(bookings));
 
     toast.success("Tickets Booked");
     setTimeout(() => {
+      setLoading(false);
       navigate("/activity");
     }, 5000);
   };
@@ -49,13 +46,13 @@ const Selection = () => {
       <Nav />
 
       <div className="flex-1 flex-col px-8 py-6">
-      <UserName />
+        <UserName />
         <img
           src={movie?.image}
           alt={movie?.name}
           className="w-full max-w-3xl h-72 rounded-md object-cover shadow-xl "
         />
-        
+
         <h2 className="text-2xl font-bold mt-4">
           {movie?.name} ({movie?.year})
         </h2>
@@ -123,9 +120,14 @@ const Selection = () => {
 
         <button
           onClick={handleBookingTicket}
+          disabled={loading}
           className="mt-10 w-xs bg-black p-3 rounded-lg hover:bg-gray-700 text-white font-bold"
         >
-          Book Ticket
+          {loading ? (
+            <span className="loading-spinner"></span>
+          ) : (
+            "Book Ticket"
+          )}
         </button>
       </div>
     </div>

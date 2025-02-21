@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaSearch, FaUserCircle, FaGlobe } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import Nav from "../components/Nav";
 import UserName from "../components/UserName";
 
