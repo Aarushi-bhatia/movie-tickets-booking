@@ -113,7 +113,7 @@ const Selection = () => {
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="font-bold bg-transparent outline-none"
+              className="cursor-pointer font-bold bg-transparent outline-none"
             />
           </div>
         </div>
@@ -121,7 +121,7 @@ const Selection = () => {
         <button
           onClick={handleBookingTicket}
           disabled={loading}
-          className="mt-10 w-xs bg-black p-3 rounded-lg hover:bg-gray-700 text-white font-bold"
+          className="mt-10 w-xs cursor-pointer bg-black p-3 rounded-lg hover:bg-gray-700 text-white font-bold"
         >
           {loading ? (
             <span className="loading-spinner"></span>
