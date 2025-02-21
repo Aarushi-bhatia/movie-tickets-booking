@@ -47,15 +47,16 @@ const Booking = () => {
           </div>
           <UserName />
         </div>
-        <h2 className="text-2xl font-bold mb-4">
+        <h2 className="text-2xl font-bold mb-6">
           Good Morning Mr. Naval Ravikant!
         </h2>
         <div className="w-4xl max-w-[1000px] h-[500px]">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4 " 
+          >
             {filteredMovies.map((movie) => (
               <div
                 key={movie.id}
-                className=" cursor-pointer"
+                className="transition transform hover:scale-105 cursor-pointer"
                 onClick={() => handleSelectMovie(movie)}
               >
                 <div className="rounded-lg shadow-md overflow-hidden">

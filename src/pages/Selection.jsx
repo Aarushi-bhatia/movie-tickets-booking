@@ -64,7 +64,7 @@ const Selection = () => {
               onClick={() => setTicketCount(Math.max(1, ticketCount - 1))}
               className="rounded-md p-2"
             >
-              <FaMinus className="text-black" />
+              <FaMinus className="text-black cursor-pointer" />
             </button>
             <span className="mx-2 py-2 px-7 text-white font-bold bg-black rounded-md">
               {ticketCount}
@@ -73,7 +73,7 @@ const Selection = () => {
               onClick={() => setTicketCount(ticketCount + 1)}
               className="p-2 rounded-md"
             >
-              <FaPlus className="text-black" />
+              <FaPlus className="text-black cursor-pointer" />
             </button>
           </div>
         </div>
@@ -82,7 +82,7 @@ const Selection = () => {
           <span className="mr-2 font-bold">Show Time</span>
           <button
             onClick={() => setTime("09:00")}
-            className={`py-2 ml-15 mx-6 px-8 font-semibold rounded-md ${
+            className={`py-2 ml-15 mx-6 px-8 font-semibold cursor-pointer rounded-md ${
               time === "09:00" ? "bg-black text-white" : "bg-gray-300"
             }`}
           >
@@ -90,7 +90,7 @@ const Selection = () => {
           </button>
           <button
             onClick={() => setTime("12:00")}
-            className={`py-2 mx-4 px-8 font-semibold rounded-md ${
+            className={`py-2 mx-4 px-8 font-semibold cursor-pointer rounded-md ${
               time === "12:00" ? "bg-black text-white" : "bg-gray-300"
             }`}
           >
@@ -98,7 +98,7 @@ const Selection = () => {
           </button>
           <button
             onClick={() => setTime("18:00")}
-            className={`py-2 mx-6 px-8 font-semibold rounded-md ${
+            className={`py-2 mx-6 px-8 font-semibold cursor-pointer rounded-md ${
               time === "18:00" ? "bg-black text-white" : "bg-gray-300"
             }`}
           >
